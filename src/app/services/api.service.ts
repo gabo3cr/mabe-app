@@ -31,7 +31,7 @@ export class ApiService {
     const dataHandle = data.split('|');
     console.log("Parseo informacion tarjeta", dataHandle);
     return new Promise((resolve, reject) => {
-      this.http.get(this.url + `/personnel/api/employee/?card_no=${dataHandle[1]}`, {}, headers)
+      this.http.get(this.url + `/personnel/api/employee/?emp_code=${dataHandle[1]}`, {}, headers)
         .then(response => {
           resolve(JSON.parse(response.data));
         }, (error) => {

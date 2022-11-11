@@ -35,12 +35,17 @@ export class QRscreenPage implements OnInit {
 
   async callGetUserById(id: string){
     try {
-      console.log('barcode Data', id);
       const response = await this.service.getUserInfo(id);
       console.log("Response get user", response);
-      const user = response['data'][0];
-      this.userService.setUser({firstName: user.first_name, lastName: user.last_name, code: user.emp_code});
-      this.router.navigate(['/authorized-user']);
+      const user = response['data'].length > 0 ?  response['data'][0] : null;
+      this.userService.cleanUser();
+      if (user) {
+        this.userService.setUser({firstName: user.first_name, lastName: user.last_name, code: user.emp_code});
+        this.router.navigate(['/authorized-user']);
+      } else {
+        this.presentAlert(id);
+      }
+
     } catch(err){
       //pasar a pantalla de negativo
       console.log(err);
@@ -48,22 +53,12 @@ export class QRscreenPage implements OnInit {
    
   }
 
-  async presentAlert() {
+  async presentAlert(id:string) {
     const alert = await this.AlertController.create({
-      header: '¿Desear cerrar session?',
+      header: 'Atencion!',
       cssClass: 'alertCustomCss',
-      
-      buttons: [
-        {
-          text: 'No',
-          cssClass: 'alert-button-cancel'
-        },
-        {
-          text: 'Yes',
-          cssClass: 'alert-button-confirm'
-        }
-      ],
-
+      message: `Usuario con ${id} no se encuentra registrado en sistema.`,
+      buttons: ['OK'],
     }); 
     await alert.present();
  }
