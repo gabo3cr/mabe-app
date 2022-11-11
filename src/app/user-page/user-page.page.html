@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-content >
+    <div class="user-txt-center">
+        <h1 class="nameUser-c" >Bienvenido, Juan Perez</h1>
+        <h3 class="roleUser-c">ADMINISTRADOR</h3>
+      </div>   
+
+      <ion-button color="button " class="button-footer bg-button-color" [routerLink]="['/qrscreen']">
+        <ion-icon slot="start" name="star"></ion-icon>
+        Continuar
+      </ion-button>
+
+</ion-content>

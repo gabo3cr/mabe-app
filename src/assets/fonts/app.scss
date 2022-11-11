@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Frutiger";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Frutiger.ttf");
+  }
+
+  @font-face {
+    font-family: "Frutiger";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/Frutiger_bold.ttf");
+  }
+
+  @import url(../../theme/variables.scss);

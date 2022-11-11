@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+
+  <div class="logo">
+    <img class="img-logo-center" src="../../assets/images/check.png" alt="">
+  </div>
+  <div *ngIf="user!=null">
+    <ion-card class="bg-white m-center-card center-content">
+      <ion-card-header class="header-m">
+        <ion-card-title class="text-24-color">ACCESSO AUTORIZADO</ion-card-title>
+        <div>
+          <h3 class="second-text-c">Nombre de Usuario: <span class="black-span-c">{{user.firstName}} {{user.lastName}}</span></h3>
+          <h3 class="second-text-c">ID: <span class="black-span-c">{{user.code}}</span></h3>
+        </div>
+      </ion-card-header>
+  
+      <ion-card-content class="center-content">
+  
+        <ion-button  [routerLink]="['/user-denied']">
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+  
+      </ion-card-content>
+  
+    </ion-card>
+  </div>
+  
+  <div class="div-white"></div>
+
+</ion-content>

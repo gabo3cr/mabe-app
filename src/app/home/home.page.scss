@@ -1,0 +1,27 @@
+.logo{
+      position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.button-footer{
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    left: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+}
+
+.bg-button-color{
+    background: #ffffff !important;
+    color: #000 !important;
+}
+
+
+.ripple-parent {
+    position: relative;
+    overflow: hidden;
+  }

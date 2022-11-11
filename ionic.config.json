@@ -1,0 +1,8 @@
+{
+  "name": "Mabe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "f0162481"
+}

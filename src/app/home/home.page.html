@@ -1,0 +1,12 @@
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-content>
+    <div class="logo">
+      <ion-img src="../../assets/images/mabe-logo-white.png" class="ion-align-self-end"></ion-img>
+    </div>
+    <ion-button color="button " class="button-footer bg-button-color" (click)="getTokenAndRedirectQr()">Iniciar</ion-button>
+
+  </ion-content>

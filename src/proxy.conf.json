@@ -1,0 +1,8 @@
+{
+    "": {
+        "target": "http://181.167.206.232:8081",
+        "secure": false,
+        "changeOrigin":true,
+        "logLevel": "debug"
+    }
+}

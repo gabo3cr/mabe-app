@@ -1,0 +1,35 @@
+.user-txt-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.nameUser-c{
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.roleUser-c{
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 0.7;
+    margin-top: -5px;
+}
+
+.button-footer{
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    left: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+}
+
+.bg-button-color{
+    background: #ffffff !important;
+    color: #000 !important;
+}
