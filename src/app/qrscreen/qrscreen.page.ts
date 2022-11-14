@@ -55,7 +55,7 @@ export class QRscreenPage implements OnInit {
 
   async presentAlert(id:string) {
     const alert = await this.AlertController.create({
-      header: 'Atencion!',
+      header: 'ERROR',
       cssClass: 'alertCustomCss',
       message: `Usuario con ${id} no se encuentra registrado en sistema.`,
       buttons: ['OK'],
