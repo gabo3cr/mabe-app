@@ -16,9 +16,10 @@
         <img class="qrImage" src="../../assets/images/qr-code.svg" alt="">
        </div>
       <ion-button class="button-c" (click)="scan()">Escanear QR</ion-button>
-      {{code}}
-    </ion-card-content>
-
+      <ion-button class="button-c-10" (click)="fastScan()">Escaneo Simultáneo</ion-button>
+  
+    </ion-card-content> 
+    <!--<div> <h3 class="second-text-c">Ultimo Usuario: <span class="black-span-c-found">{{user.code}}</span></h3></div>-->
   </ion-card>
 
 </ion-content>

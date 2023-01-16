@@ -5,20 +5,16 @@
   </div>
   <ion-card class="bg-white m-center-card">
     <ion-card-header class="header-m">
-      <ion-card-title>INICIAR SESSION</ion-card-title>
+      <ion-card-title>Activar Aplicación </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-item color="colorwhite ">
-        <ion-label class="bg-white text-up" position="floating">Nombre de Usuario</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
       <ion-item color="colorwhite">
         <ion-label class="bg-white text-up" position="floating">Password</ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
 
-      <ion-button class=" button-c " [routerLink]="['/user-page']">Login</ion-button>
+      <ion-button class=" button-c " (click)="onPass()">Login</ion-button>
 
     </ion-card-content>
 
