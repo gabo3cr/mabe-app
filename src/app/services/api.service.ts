@@ -6,8 +6,8 @@ import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 })
 export class ApiService {
 
-  //url = 'http://181.167.206.232:8081';
-  url = 'http://10.1.80.203:443/';
+  url = 'http://181.167.206.232:8081';
+  //url = 'http://10.1.80.203:443/';
     
   constructor(private http: HTTP) { }
 
@@ -16,7 +16,7 @@ export class ApiService {
   const headers= { "Content-Type": "application/json" }
 
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + '/api-token-auth/', {"username": "app", "password": "app.2022"}, headers)
+      this.http.post(this.url + '/api-token-auth/', {"username": "admin", "password": "zkteco1234"}, headers)
         .then(response => {
           resolve(JSON.parse(response.data));
         }, (error) => {

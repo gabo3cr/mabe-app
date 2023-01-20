@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), //canActivate: [AuthGuard]
   },
   {
     path: 'message/:id',
     loadChildren: () => import('./view-message/view-message.module').then( m => m.ViewMessagePageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
+    path: '', 
+    redirectTo: 'form',
     pathMatch: 'full'
   },
   {
     path: 'form',
-    loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
+    loadChildren: () => import('./form/form.module').then( m => m.FormPageModule),
   },
   {
     path: 'user-page',
@@ -45,4 +46,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

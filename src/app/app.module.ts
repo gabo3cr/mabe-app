@@ -9,14 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [BarcodeScanner, HTTP,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
-    /*{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }*/
+    {         provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    {         provide: AuthGuard}
   ],
   bootstrap: [AppComponent],
 })
