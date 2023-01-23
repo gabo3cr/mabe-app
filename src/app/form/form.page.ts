@@ -25,16 +25,18 @@ export class FormPage implements OnInit {
     private toastController: ToastController,
     private location: Location) {
 
-    this.iniciarSesion(); {
-
-      if (authService.setToken(), this.tokenLogin) {
-        sessionStorage.getItem('tokenLogin',)
-        //this.router.navigate(['form']);
-        console.log("token is: ", this.tokenLogin)
-      } else {
-        this.router.navigate(['forms']);
-      }
+    debugger;  
+    //this.iniciarSesion(); 
+    
+    /*
+    if (authService.setToken(), this.tokenLogin) {
+      sessionStorage.getItem('tokenLogin',)
+      //this.router.navigate(['form']);
+      console.log("token is: ", this.tokenLogin)
+    } else {
+      this.router.navigate(['forms']);
     }
+    */
   }
 
   ngOnInit() { }
@@ -44,7 +46,9 @@ export class FormPage implements OnInit {
     this.authService.loginIn(this.formPassword.value)
       .subscribe((response) => {
         if ((response.data && response.login)) {
-          console.log(response)
+          console.log('loginIn: ', response)
+          
+          this.authService.setToken(response.login);
           this.router.navigate(['home'])
           this.successToast();
         } else {

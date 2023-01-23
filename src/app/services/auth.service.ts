@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 interface FormPage {
   clave: string
@@ -16,7 +17,7 @@ export class AuthService {
   tokenLogin = 'jwtkc';
 
 
-  url = "https://neo-branding.com/";
+  url = environment.loginUrl;
   //url = "http://localhost/mabe-licencia/";  
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -26,13 +27,11 @@ export class AuthService {
   }
 
   public removeItems(){
-    sessionStorage.removeItem('jwtkc');
-    sessionStorage.removeItem('refreshkwtkc');
+    sessionStorage.removeItem('jwtkc');   
   }
 
-  setToken(){
-    sessionStorage.setItem('jwtkc', this.tokenLogin);
-    sessionStorage.setItem('refreshkwtkc', this.tokenLogin); 
+  setToken(value: string){
+    sessionStorage.setItem('jwtkc', value);    
   }
 
   public verificarPassword(obj: FormPage) {
