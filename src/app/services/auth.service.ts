@@ -13,8 +13,8 @@ interface FormPage {
 
 export class AuthService {
 
-  isLoggedIn: boolean = false;
-  tokenLogin = 'jwtkc';
+  //isLoggedIn: boolean = false;
+  tokenLogin = 'jwt';
 
 
   url = environment.loginUrl;
@@ -23,23 +23,25 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   public readToken(): string {
-    return sessionStorage.getItem('jwtkc');
+    return sessionStorage.getItem('jwt');
   }
 
   public removeItems(){
-    sessionStorage.removeItem('jwtkc');   
+    sessionStorage.removeItem('jwt');   
   }
 
   setToken(value: string){
-    sessionStorage.setItem('jwtkc', value);    
+    sessionStorage.setItem('jwt', value);    
   }
+
+  isLoggedIn = (): boolean => this.readToken() ? true : false;
 
   public verificarPassword(obj: FormPage) {
     return this.http.post<any>(this.url + `auth/`, obj);
   }
 
   public loginIn(obj: FormPage) {
-    this.tokenLogin;
+    //this.tokenLogin;
     //console.log("aqui entra el guard: ", this.isLoggedIn)
     return this.http.post<any>(this.url + `auth/`, obj);
   }

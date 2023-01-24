@@ -24,19 +24,6 @@ export class FormPage implements OnInit {
     private authService: AuthService,
     private toastController: ToastController,
     private location: Location) {
-
-    debugger;  
-    //this.iniciarSesion(); 
-    
-    /*
-    if (authService.setToken(), this.tokenLogin) {
-      sessionStorage.getItem('tokenLogin',)
-      //this.router.navigate(['form']);
-      console.log("token is: ", this.tokenLogin)
-    } else {
-      this.router.navigate(['forms']);
-    }
-    */
   }
 
   ngOnInit() { }
@@ -48,7 +35,7 @@ export class FormPage implements OnInit {
         if ((response.data && response.login)) {
           console.log('loginIn: ', response)
           
-          this.authService.setToken(response.login);
+          this.authService.setToken(response.data.clave);
           this.router.navigate(['home'])
           this.successToast();
         } else {
